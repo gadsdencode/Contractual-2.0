@@ -1,6 +1,8 @@
+
+import { redirect } from 'next/navigation'
+import { ContractList } from '@/components/contracts/contract-list'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
 
 export default async function DashboardPage() {
   const supabase = createServerComponentClient({ cookies })
@@ -9,11 +11,15 @@ export default async function DashboardPage() {
   if (!session) {
     redirect('/login')
   }
+  const { data: contracts } = await supabase
+  .from('contracts')
+  .select('*')
+  .order('created_at', { ascending: false })
+  .limit(5)
 
   return (
-    <div className="container py-8">
-      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
-      {/* Add your dashboard content here */}
+    <div className="container mx-auto py-8">
+      <ContractList contracts={contracts || []} />
     </div>
   )
 }
