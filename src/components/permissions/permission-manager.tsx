@@ -11,7 +11,8 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 import { supabase } from '@/lib/supabase/client'
-import type { Permission } from '@/lib/supabase/types'
+
+export type Permission = 'viewer' | 'editor' | 'owner'
 
 interface PermissionManagerProps {
   contractId: string

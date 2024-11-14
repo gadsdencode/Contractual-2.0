@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import { inter, jetbrainsMono } from '@/styles/fonts'
 import { ThemeProvider } from '@/components/providers/theme-provider'
-
-const inter = Inter({ subsets: ['latin'] })
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Contract Tracker',
@@ -16,7 +14,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html 
+      lang="en" 
+      suppressHydrationWarning
+      className={`${inter.variable} ${jetbrainsMono.variable}`}
+    >
       <body className={inter.className}>
         <ThemeProvider
           attribute="class"

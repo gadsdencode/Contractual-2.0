@@ -48,7 +48,7 @@ export function VersionHistory({ contractId, currentVersion }: VersionHistoryPro
       .order('version_number', { ascending: false })
 
     if (!error && data) {
-      setVersions(data)
+      setVersions(data as unknown as ContractVersion[])
     }
   }
 

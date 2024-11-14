@@ -10,7 +10,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
 import { supabase } from '@/lib/supabase/client'
-
+import { format } from 'date-fns'
 interface Notification {
   id: string
   content: string
@@ -101,7 +101,7 @@ export function NotificationBell() {
             <div className="flex flex-col gap-1">
               <p>{notification.content}</p>
               <span className="text-xs text-gray-500">
-                {formatDate(notification.created_at)}
+                {format(new Date(notification.created_at), 'MMM d, yyyy')}
               </span>
             </div>
           </DropdownMenuItem>

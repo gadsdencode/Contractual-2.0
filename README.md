@@ -34,3 +34,171 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+```
+Contractual-2.0
+├─ .eslintrc.json
+├─ .git
+│  ├─ config
+│  ├─ description
+│  ├─ HEAD
+│  ├─ hooks
+│  │  ├─ applypatch-msg.sample
+│  │  ├─ commit-msg.sample
+│  │  ├─ fsmonitor-watchman.sample
+│  │  ├─ post-update.sample
+│  │  ├─ pre-applypatch.sample
+│  │  ├─ pre-commit.sample
+│  │  ├─ pre-merge-commit.sample
+│  │  ├─ pre-push.sample
+│  │  ├─ pre-rebase.sample
+│  │  ├─ pre-receive.sample
+│  │  ├─ prepare-commit-msg.sample
+│  │  ├─ push-to-checkout.sample
+│  │  ├─ sendemail-validate.sample
+│  │  └─ update.sample
+│  ├─ index
+│  ├─ info
+│  │  └─ exclude
+│  ├─ logs
+│  │  ├─ HEAD
+│  │  └─ refs
+│  │     ├─ heads
+│  │     │  ├─ dev
+│  │     │  └─ main
+│  │     └─ remotes
+│  │        └─ origin
+│  │           ├─ dev
+│  │           └─ HEAD
+│  ├─ objects
+│  │  ├─ info
+│  │  └─ pack
+│  │     ├─ pack-6c33099384e164a03ca52dd189defd71415b8975.idx
+│  │     ├─ pack-6c33099384e164a03ca52dd189defd71415b8975.pack
+│  │     └─ pack-6c33099384e164a03ca52dd189defd71415b8975.rev
+│  ├─ packed-refs
+│  └─ refs
+│     ├─ heads
+│     │  ├─ dev
+│     │  └─ main
+│     ├─ remotes
+│     │  └─ origin
+│     │     ├─ dev
+│     │     └─ HEAD
+│     └─ tags
+├─ .gitignore
+├─ .prettierrc
+├─ app
+│  ├─ globals.css
+│  ├─ layout.tsx
+│  └─ page.tsx
+├─ components.json
+├─ jest.config.js
+├─ jest.setup.js
+├─ next.config.js
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ public
+│  ├─ file.svg
+│  ├─ globe.svg
+│  ├─ next.svg
+│  ├─ vercel.svg
+│  └─ window.svg
+├─ README.md
+├─ src
+│  ├─ app
+│  │  ├─ contracts
+│  │  │  └─ [id]
+│  │  │     └─ page.tsx
+│  │  ├─ dashboard
+│  │  │  └─ page.tsx
+│  │  ├─ globals.css
+│  │  ├─ layout.tsx
+│  │  └─ page.tsx
+│  ├─ components
+│  │  ├─ auth
+│  │  │  └─ auth-form.tsx
+│  │  ├─ comments
+│  │  │  └─ comment-section.tsx
+│  │  ├─ contracts
+│  │  │  ├─ contract-editor.tsx
+│  │  │  ├─ contract-list.tsx
+│  │  │  └─ version-history.tsx
+│  │  ├─ notifications
+│  │  │  └─ notification-bell.tsx
+│  │  ├─ permissions
+│  │  │  └─ permission-manager.tsx
+│  │  ├─ providers
+│  │  │  └─ theme-provider.tsx
+│  │  └─ ui
+│  │     ├─ accordion.tsx
+│  │     ├─ alert-dialog.tsx
+│  │     ├─ alert.tsx
+│  │     ├─ aspect-ratio.tsx
+│  │     ├─ avatar.tsx
+│  │     ├─ badge.tsx
+│  │     ├─ breadcrumb.tsx
+│  │     ├─ button.tsx
+│  │     ├─ calendar.tsx
+│  │     ├─ card.tsx
+│  │     ├─ carousel.tsx
+│  │     ├─ chart.tsx
+│  │     ├─ checkbox.tsx
+│  │     ├─ collapsible.tsx
+│  │     ├─ command.tsx
+│  │     ├─ context-menu.tsx
+│  │     ├─ dialog.tsx
+│  │     ├─ drawer.tsx
+│  │     ├─ dropdown-menu.tsx
+│  │     ├─ form.tsx
+│  │     ├─ hover-card.tsx
+│  │     ├─ input-otp.tsx
+│  │     ├─ input.tsx
+│  │     ├─ label.tsx
+│  │     ├─ loading-card.tsx
+│  │     ├─ menubar.tsx
+│  │     ├─ navigation-menu.tsx
+│  │     ├─ pagination.tsx
+│  │     ├─ popover.tsx
+│  │     ├─ progress.tsx
+│  │     ├─ radio-group.tsx
+│  │     ├─ resizable.tsx
+│  │     ├─ scroll-area.tsx
+│  │     ├─ select.tsx
+│  │     ├─ separator.tsx
+│  │     ├─ sheet.tsx
+│  │     ├─ sidebar.tsx
+│  │     ├─ skeleton.tsx
+│  │     ├─ slider.tsx
+│  │     ├─ sonner.tsx
+│  │     ├─ switch.tsx
+│  │     ├─ table.tsx
+│  │     ├─ tabs.tsx
+│  │     ├─ textarea.tsx
+│  │     ├─ theme-toggle.tsx
+│  │     ├─ toast.tsx
+│  │     ├─ toaster.tsx
+│  │     ├─ toggle-group.tsx
+│  │     ├─ toggle.tsx
+│  │     └─ tooltip.tsx
+│  ├─ hooks
+│  │  ├─ use-mobile.tsx
+│  │  └─ use-toast.ts
+│  ├─ lib
+│  │  ├─ diff.ts
+│  │  ├─ supabase
+│  │  │  ├─ client.ts
+│  │  │  └─ types.ts
+│  │  └─ utils.ts
+│  ├─ middleware.ts
+│  ├─ styles
+│  │  ├─ animations.ts
+│  │  └─ fonts.ts
+│  └─ types
+│     └─ supabaseTypes.ts
+├─ tailwind.config.js
+├─ tailwind.config.ts
+└─ tsconfig.json
+
+```

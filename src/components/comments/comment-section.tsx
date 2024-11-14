@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { supabase } from '@/lib/supabase/client'
-import { formatDate } from '@/lib/utils'
+import { format } from 'date-fns'
 
 interface Comment {
   id: string
@@ -42,7 +42,7 @@ export function CommentSection({ contractId }: CommentSectionProps) {
       .order('created_at', { ascending: false })
 
     if (!error && data) {
-      setComments(data)
+      setComments(data as unknown as Comment[])
     }
   }
 
@@ -108,7 +108,7 @@ export function CommentSection({ contractId }: CommentSectionProps) {
             <div className="flex justify-between items-center">
               <span className="font-medium">{comment.user.name}</span>
               <span className="text-sm text-gray-500">
-                {formatDate(comment.created_at)}
+                {format(new Date(comment.created_at), 'MMM d, yyyy')}
               </span>
             </div>
             <p className="mt-2">{comment.content}</p>

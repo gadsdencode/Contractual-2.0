@@ -3,9 +3,9 @@
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { staggerContainer, listItem } from '@/styles/animations'
-import { formatDate } from '@/lib/utils'
+import { format } from 'date-fns'
 
-interface Contract {
+export interface Contract {
   id: string
   title: string
   created_at: string
@@ -32,7 +32,7 @@ export function ContractList({ contracts }: { contracts: Contract[] }) {
                   Version {contract.version}
                 </span>
                 <span className="text-sm text-gray-500">
-                  {formatDate(contract.created_at)}
+                  {format(new Date(contract.created_at), 'MMM d, yyyy')}
                 </span>
               </div>
             </div>

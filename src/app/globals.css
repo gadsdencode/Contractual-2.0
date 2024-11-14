@@ -47,19 +47,93 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 224.3 76.3% 48%;
   }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
 
 @layer utilities {
+  .step {
+    counter-increment: step;
+  }
+
+  .step:before {
+    @apply absolute w-8 h-8 bg-muted rounded-full font-medium text-center text-base inline-flex items-center justify-center -indent-px;
+    @apply ml-[-41px];
+    content: counter(step);
+  }
+
   .shimmer {
     @apply relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-shimmer before:bg-shimmer;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground;
+}
+
+/* Typography styles */
+.h1 {
+  @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+}
+
+.h2 {
+  @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+}
+
+.h3 {
+  @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+}
+
+.h4 {
+  @apply scroll-m-20 text-xl font-semibold tracking-tight;
+}
+
+.p {
+  @apply leading-7 [&:not(:first-child)]:mt-6;
+}
+
+.lead {
+  @apply text-xl text-muted-foreground;
+}
+
+.large {
+  @apply text-lg font-semibold;
+}
+
+.small {
+  @apply text-sm font-medium leading-none;
+}
+
+.muted {
+  @apply text-sm text-muted-foreground;
+}
+
+/* Code block styles */
+.code {
+  @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+}
+
+/* List styles */
+.list {
+  @apply my-6 ml-6 list-disc [&>li]:mt-2;
 }
