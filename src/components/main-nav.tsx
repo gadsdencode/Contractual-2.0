@@ -6,6 +6,10 @@ import { cn } from '@/lib/utils'
 
 const routes = [
   {
+    href: '/',
+    label: 'Home',
+  },
+  {
     href: '/dashboard',
     label: 'Dashboard',
   },
@@ -13,6 +17,10 @@ const routes = [
     href: '/contracts',
     label: 'Contracts',
   },
+  {
+    href: '/register',
+    label: 'Register',
+  }
 ]
 
 export function MainNav() {
