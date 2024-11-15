@@ -10,7 +10,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-4xl md:text-6xl font-bold mb-6"
+        className="text-4xl md:text-6xl font-bold mb-6 text-gray-500"
       >
         Welcome to the Future
       </motion.h2>
@@ -27,7 +27,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
       >
-        <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+        <Button variant="default" size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
           Get Started
         </Button>
       </motion.div>

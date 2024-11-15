@@ -32,7 +32,7 @@ export default function AuthButton() {
   }
 
   return user ? (
-    <Button onClick={handleSignOut} variant="outline">
+    <Button onClick={handleSignOut} variant="default">
       Sign Out
     </Button>
   ) : (

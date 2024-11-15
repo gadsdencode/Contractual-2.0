@@ -19,6 +19,10 @@ import {
 } from '@/components/ui/form'
 import { toast } from '@/hooks/use-toast'
 import { supabase } from '@/lib/supabase/client'
+import { calculatePasswordStrength } from '@/lib/utils/password'
+import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import { Checkbox } from '@/components/ui/checkbox'
 
 const loginSchema = z.object({
   email: z.string().email('Invalid email address'),
@@ -73,9 +77,6 @@ export function AuthForm() {
       const { error } = await supabase.auth.signInWithPassword({
         email: data.email,
         password: data.password,
-        options: {
-          persistSession: data.rememberMe
-        }
       })
 
       if (error) throw error
@@ -223,6 +224,7 @@ export function AuthForm() {
                       </FormItem>
                     )}
                   />
+                  </div>
 
                   <div className="flex justify-between items-center">
                     <Button
@@ -239,11 +241,10 @@ export function AuthForm() {
                       disabled={isLoading}
                     >
                       <Image
-                        src="/google.svg"
-                        alt="Google"
-                        width={20}
-                        height={20}
-                        className="mr-2"
+                       width={20}
+                       height={20}
+                       src="/google.svg"
+                       alt="Google"
                       />
                       Continue with Google
                     </Button>
@@ -311,6 +312,7 @@ export function AuthForm() {
                   control={registerForm.control}
                   name="password"
                   render={({ field }) => (
+                    <>
                     <FormItem>
                       <FormLabel>Password</FormLabel>
                       <FormControl>
@@ -369,6 +371,7 @@ export function AuthForm() {
                       </FormControl>
                       <FormMessage />
                     </FormItem>
+                    </>
                   )}
                 />
 
