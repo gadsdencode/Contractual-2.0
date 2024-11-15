@@ -1,4 +1,3 @@
-
 import { redirect } from 'next/navigation'
 import { ContractList } from '@/components/contracts/contract-list'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
