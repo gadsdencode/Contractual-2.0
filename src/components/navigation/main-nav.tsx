@@ -17,25 +17,25 @@ export function MainNav() {
         Home
       </Link>
       <Link
-        href="/(dashboard)/dashboard"
+        href="/dashboard"
         className={`text-sm font-medium transition-colors hover:text-primary ${
-          pathname === '/(dashboard)/dashboard' ? 'text-primary' : 'text-muted-foreground'
+          pathname === '/dashboard' ? 'text-primary' : 'text-muted-foreground'
         }`}
       >
         Dashboard
       </Link>
       <Link
-        href="/(dashboard)/contracts"
+        href="/contracts"
         className={`text-sm font-medium transition-colors hover:text-primary ${
-          pathname === '/(dashboard)/contracts' ? 'text-primary' : 'text-muted-foreground'
+          pathname === '/contracts' ? 'text-primary' : 'text-muted-foreground'
         }`}
       >
         Contracts
       </Link>
       <Link
-        href="/(auth)/register"
+        href="/register"
         className={`text-sm font-medium transition-colors hover:text-primary ${
-          pathname === '/(auth)/register' ? 'text-primary' : 'text-muted-foreground'
+          pathname === '/register' ? 'text-primary' : 'text-muted-foreground'
         }`}
       >
         Register
